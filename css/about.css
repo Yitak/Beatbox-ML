@@ -1,0 +1,148 @@
+.fixed-background {
+    background: url('../assets/graphics/Sound-Wave-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Main Content */
+.slogan-container {
+    margin-inline: 0rem;
+}
+
+
+
+.slogan {
+    color: beige;
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 100;
+    text-shadow: 0 0 1.5em rgba(47, 47, 47, 0.9);
+}
+
+
+
+
+
+/* Our Team */
+.team-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0vh;
+    margin-bottom: 20vh;
+    font-size: 1.4rem
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 5em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100vw;
+    gap: 2em;
+    padding: 10%;
+}
+
+.director-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.director-photo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.director-photo-container img {
+    width: 4em;
+    height: max-content;
+}
+
+.director-name {
+    color: beige;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.director-position {
+    color: beige;
+    padding-top: 0.4rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.hover-instruction {
+    color: beige;
+    padding-top: 0.4rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.more-detail-description {
+    display: none;
+    color: beige;
+    padding: 2em 1.3em 2em 1.3em;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.2em;
+    text-shadow: 0 0 12px rgba(47, 47, 47, 0.45);
+}
+
+.director-profile:hover {
+    background-color: rgba(255, 255, 255, 0.65);
+    border: none;
+    border-radius: 2em;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+.director-profile:hover .director-name {
+    color: black;
+}
+
+.director-profile:hover .director-position {
+    color: black;
+}
+
+.director-profile:hover .more-detail-description {
+    display: block;
+    color: black;
+}
+
+.director-profile:hover .hover-instruction {
+    display:none;
+}
+
+
+
+
+@media only screen and (max-width: 1080px) {
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8em;
+    }
+    .director-profile {
+        align-self: center;
+        width: 85vw;
+    }
+}

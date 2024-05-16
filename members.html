@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="assets/graphics/beatbox-ml-webicon.png">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/members.css">
+    <title>About BEATBOX-ML</title> 
+</head>
+<body>
+
+    <div class="fixed-background"></div>
+
+    <!--------------------------------------------------------- Nav --------------------------------------------------------->
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>BEATBOX-ML</p>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html" class="link">Discover</a></li>
+                <li><a href="about.html" class="link">About</a></li>
+                <li class="dropdown">
+                    <a href="members.html" class="link" id="memberBtn">Members<i class="bx bx-caret-down" id="dropdown-icon"></i></a>
+                    <div class="dropdown-content-display">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item"><a href="beatbox-bot.html">BEATBOX-bot</a></div>
+                            <div class="dropdown-item"><a href="members.html">My Account</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button type="button" class="signoutbtn" id="signoutBtn"><i class="bx bx-log-out" id="dropdown-icon"></i> Sign Out</button>
+        </div>
+        <div class="twoNavButtons">
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="menuFunction()"></i>
+            </div>
+            <div class="showResposiveLogoutButton">
+                <div class="nav-menu-btn log-out">
+                    <i class="bx bx-log-out"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="non-background">
+
+
+        <div class="wrapper" id="wrapper">
+            
+            <div class="slogan-container">
+                <div class="slogan">Members' page coming soon...</div>
+            </div>
+        </div>
+        <div class="content">
+
+            <!-- ------------------------------------ Newsletter ------------------------------  -->
+            <!---------------------------------- Mailing List ---------------------------------------------->
+            <div class="mailing-signup-box">
+                <div class="mailing-signup-container">
+                    <div class="content-section-header">
+                        <h1>
+                            <i class="bx bxs-envelope"></i>
+                            Join our newsletter!
+                        </h1>
+                    </div>
+                    <form class="mailing-form-container" id="mailing-form">
+                        <div class="mailing-form-header">
+                            <h2>
+                                Subscribe to receive the latest news and exclusive offers for our products!
+                            </h2>
+                            <div class="newsletter-input-box-container">
+                                <div class="newsletter-input-box">
+                                    <div class="error-text newsletter-email">1</div>
+                                    <input type="text" class="newsletter-input-field" id="newsletterEmailAddress"
+                                        placeholder="Enter your email address">
+                                </div>
+                                <div class="newsletter-input-box">
+                                    <div class="error-text newsletter-repeat">2</div>
+                                    <input type="text" class="newsletter-input-field" id="newsletterRepeatEmail"
+                                        placeholder="Repeat your email address">
+                                </div>
+                                <div class="newsletter-input-box">
+                                    <input type="submit" class="subscribe" id="newsletter-subscribe"
+                                        value="Subscribe">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="paragraph-box">
+                <div class="paragraph-container">
+                    <p class="paragraph-content">
+                        If you want to learn more about us, there is more on our About Us page!<br>
+                        If you would like to ask us about something, below is our contact form. We will get back to you ASAP!
+                    </p>
+                </div>
+            </div>
+
+
+            <!------------------------------------------------------- Contact Form ------------------------------------------------------->
+            <div class="contactform-box" id="contactform-box">
+                <form class="contactform-container" id="contactform">
+                    <div class="top">
+                        <header>Contact Form</header>
+                    </div>
+                    <div class="two-col-forms">
+                        <div class="error-text-firstname">* Required</div>
+                        <div class="error-text-lastname">* Required</div>
+                    </div>
+                    <div class="two-col-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="First Name" id="First Name" maxlength="40">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="Surname" id="Last Name" maxlength="40">
+                            <i class="bx bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="error-text email">* Required</div>
+                        <input type="text" class="input-field" placeholder="Email Address" id="Email Address" maxlength="64">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <div class="error-text repeat-email">* Required</div>
+                        <input type="text" class="input-field" placeholder="Repeat Email Address" id="Repeat Email Address" maxlength="64">
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <div class="error-text phone">Optional</div>
+                        <input type="text" class="input-field-optional" placeholder="(Optional) Phone Number with +Region Code"
+                            id="Phone Number" maxlength="32">
+                        <i class="bx bx-phone"></i>
+                    </div>
+                    <div class="input-box">
+                        <div class="error-text title">* Required</div>
+                        <input type="text" class="input-field"
+                            placeholder="Subject or Tags (example: Products, Usage, etc.)" id="Tags" maxlength="64" minlength="5">
+                        <i class="bx bx-purchase-tag-alt"></i>
+                    </div>
+                    <div class="input-box-message">
+                        <div class="error-text message-content">* Required</div>
+                        <textarea type="text" class="message-field" placeholder="Message" id="Message" maxlength="1024" minlength="10"></textarea>
+                        <i class="bx bx-message-dots"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" id="contactform-submit" value="Submit">
+                    </div>
+                    <div class="footer-container">
+                        <div class="footer">
+                            <label><a href="#">Terms & Conditions</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+
+ <!-- THIS IS THE END OF NON-BACKGROUND DIV. DO NOT PUT ANY CONTENT AFTER THIS DIV. -->
+    </div>
+
+
+    <!-- Scroll Reveal -->
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- Mail service -->
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <!-- Alert messages -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/members.js"></script>
+    <script type="module" src="./js/modules/contactform.js"></script>
+    <script type="module" src="./js/modules/newsletter.js"></script>
+</body>
+</html>

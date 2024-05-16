@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="assets/graphics/beatbox-ml-webicon.png">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>BEATBOX-ML</title>
+</head>
+<body>
+    <div class="overflow-wrapper">
+        <!-- BACKGROUND IN THIS DIV.  -->
+        <div class="fixed-background"></div>
+    
+        <!--------------------------------------------------------- Nav --------------------------------------------------------->
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>BEATBOX-ML</p>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="link">Discover</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li class="dropdown">
+                        <a href="members.html" class="link" id="memberBtn">Members<i class="bx bx-caret-down"
+                                id="dropdown-icon"></i></a>
+                        <div class="dropdown-content-display">
+                            <div class="dropdown-content">
+                                <div class="dropdown-item"><a href="beatbox-bot.html">BEATBOX-bot</a></div>
+                                <div class="dropdown-item"><a href="members.html">My Account</a></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button type="button" class="signoutbtn" id="signoutBtn"><i class="bx bx-log-out" id="dropdown-icon"></i>
+                    Sign Out</button>
+            </div>
+            <div class="twoNavButtons">
+                <div class="nav-menu-btn">
+                    <i class="bx bx-menu" onclick="menuFunction()"></i>
+                </div>
+                <div class="showResposiveLogoutButton">
+                    <div class="nav-menu-btn log-out">
+                        <i class="bx bx-log-out"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- NON-BACKGROUND IN THIS DIV, MAKE SURE EVERYTHING THAT IS NOT THE BACKGROUND WAVE IMAGE IS IN THIS DIV  -->
+        <!-- this class is unused in the css, but just needed to write down in order to emphasise this MUST contain all non-background content -->
+        <div class="non-background">
+    
+    
+            <div class="wrapper" id="wrapper">
+    
+                <!------------------------------------------------------- Content ------------------------------------------------------->
+                <div class="slogan-container">
+                    <h2 class="slogan">
+                        Harmonize Your Melodies with AI-Driven Beatboxing
+                    </h2>
+                </div>
+            </div>
+            <!--------------------------------------------------------- Animations --------------------------------------------------------->
+            <section id="instruction-box">
+                <div class="scrolling-container">
+                    <div class="instruction">
+                        <i class="bx bx-chevrons-down"></i>
+                        Scroll through our animation!
+                    </div>
+                </div>
+            </section>
+            <section id="hero" class="hero-container">
+                <div class="canvas-container" id="canvas-container">
+                    <canvas id="main-animations-canvas"></canvas>
+                </div>
+            </section>
+            <div class="scrolling-container">
+                <div class="instruction">
+                    <i class="bx bx-chevrons-down"></i>
+                    More info below!
+                </div>
+            </div>
+    
+            <!-- Wrapper below canvas -->
+            <section class="content">
+                <div class="wrapper-below-canvas">
+                    <!--------------------------------------------------------- Showcase --------------------------------------------------------->
+                    <div class="showcase-box">
+                        <div class="showcase-container">
+                            <div class="content-section-header">
+                                <h1>Example Showcase</h1>
+                            </div>
+                            <div class="chat-container">
+                                <!-- Instruction -->
+                                <div class="chat-profile ai">
+                                    <img src="assets/graphics/beat-ml-logo-circular.png"></img>
+                                    <h1>&ensp;BEATBOX-bot</h1>
+                                </div>
+                                <div class="message-container-ai">
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                Welcome! 👋🏽<br> Please record your beat idea.
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- User audio -->
+                                <div class="chat-profile user">
+                                    <h1>You&ensp;</h1>
+                                    <img src="assets/graphics/default-avatar.png"></img>
+                                </div>
+                                <div class="message-container-user">
+                                    <div class="sound-message-container">
+                                        <div class="audio-player">
+                                            <i class="bx bx-play-circle" id="play"></i>
+                                            <div class="waveform-container user" id="waveform-container"></div>
+                                        </div>
+                                        <div class="audio-duration"></div>
+                                    </div>
+                                </div>
+                                <!-- AI generation -->
+                                <div class="chat-profile ai">
+                                    <img src="assets/graphics/beat-ml-logo-circular.png"></img>
+                                    <h1>&ensp;BEATBOX-bot</h1>
+                                </div>
+                                <div class="message-container-ai">
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                Nice! I'll turn that into some professional beatboxing.
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="audio-player">
+                                            <i class="bx bx-play-circle"></i>
+                                            <div class="waveform-container ai_1" id="waveform-container"></div>
+                                        </div>
+                                        <div class="audio-duration"></div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                Have I understood your idea correctly?<br> 
+                                                If so, I can come up with some further enhancement ideas. <br>
+                                                If not, I'll try to reconsider the general pattern!
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- User choice -->
+                                <div class="chat-profile user">
+                                    <h1>You&ensp;</h1>
+                                    <img src="assets/graphics/default-avatar.png"></img>
+                                </div>
+                                <div class="message-container-user">
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                Yes!!👍 Move on to enhancement.
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- AI enhancements -->
+                                <div class="chat-profile ai">
+                                    <img src="assets/graphics/beat-ml-logo-circular.png"></img>
+                                    <h1>&ensp;BEATBOX-bot</h1>
+                                </div>
+                                <div class="message-container-ai">
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                Great! I'll now be sending over some enhancement ideas.<br> 
+                                                See if these inspire you any further!
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                This one incorporates bass techniques such as throat bass and liproll bass:
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="audio-player">
+                                            <i class="bx bx-play-circle"></i>
+                                            <div class="waveform-container ai_2" id="waveform-container"></div>
+                                        </div>
+                                        <div class="audio-duration"></div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="message-header">
+                                            <h2>
+                                                This one changes up the percussive sounds and adds extra rhythmic fillers to build upon your groove:
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sound-message-container">
+                                        <div class="audio-player">
+                                            <i class="bx bx-play-circle"></i>
+                                            <div class="waveform-container ai_3" id="waveform-container"></div>
+                                        </div>
+                                        <div class="audio-duration"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------------------------------------- The Three Visions ---------------------------------------------------->
+                    <div class="visions-box">
+                        <div class="content-section-header">
+                            <h1>Our Visions</h1>
+                        </div>
+                        <div class="visions-container">
+                            <div class="vision-card-container">
+                                <div class="vision-card v1">
+                                    <h2>Empowering Creativity</h2>
+                                    <p class="short-version">
+                                        Unlock the full potential of human vocals</br><br>
+                                        Our AI beatboxer is trained in special vocal techniques to give your music a unique spin
+                                    </p>
+                                    <div class="overflow-text">
+                                        <p>You have music ideas. You want to infuse your music with a special vocal element
+                                            - not just singing, not just spoken word - you want the full magical potential
+                                            of human vocal techniques: percussive vocal sounds, unique voice registers,
+                                            diverse singing styles.</p>
+                                        <p>Normally, any one of these would require a person to go through months, maybe
+                                            years of training and practice to pull off. But our AI beatboxer has been
+                                            trained to provide you the exact sound waves you’ve been looking for, all while
+                                            keeping true to the sound textures that correspond to real vocal techniques
+                                            doable by a trained professional.</p>
+                                    </div>
+                                    <span class="toggle-vision">Show details</span>
+                                </div>
+                            </div>
+                            <div class="vision-card-container">
+                                <div class="vision-card v2">
+                                    <h2>Transforming Entertainment</h2>
+                                    <p class="short-version">
+                                        Create high-quality tracks from scratch</br><br>
+                                        No DAW? No studio mic? No amplifier? No problem - you’ve found your people
+                                    </p>
+                                    <div class="overflow-text">
+                                        <p>Can’t afford the extortionate pricing of music production hardware and software?
+                                            Our AI enhancement will produce studio-quality tracks and parts according to
+                                            your needs, at the most affordable rates possible. All you need is a reasonably
+                                            quiet room and the default microphone of your personal computer or smartphone,
+                                            and we’ll guide you through the rest!</p>
+                                        <p>Our goal here is to help democratize music production, helping aspiring musicians
+                                            bring art to life with ease like never before. We at Beatbox-ML have close
+                                            relationships with many independent musicians whose most limiting concern is
+                                            budget, and that was a main inspiration for both our product itself and our
+                                            pricing options.</p>
+                                    </div>
+                                    <span class="toggle-vision">Show details</span>
+                                </div>
+                            </div>
+                            <div class="vision-card-container">
+                                <div class="vision-card v3">
+                                    <h2>Revolutionizing Music Education</h2>
+                                    <p class="short-version">
+                                        Learn music theory through experience</br><br>
+                                        Speak the music directly from your mind & soul; we’ll back you up no matter what
+                                    </p>
+                                    <div class="overflow-text">
+                                        <p>Our AI tool was designed to assist the expression of musical creativity, and one
+                                            of the biggest applications for it is in music education: learning how to
+                                            express yourself through music can be difficult, no matter what age you are.</p>
+                                        <p>Instead of just having learners go through painstaking musical training before
+                                            they are ready to compose - whether that be with a traditional instrument, a
+                                            modern synthesizer, or just their voice - why not also unleash an infinitude of
+                                            possibilities instantly by interacting with Beatbox-ML, voicing ideas directly
+                                            and then witnessing them mature within seconds?</p>
+                                    </div>
+                                    <span class="toggle-vision">Show details</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------------- About Us --------------------------------------------------------->
+                    <div class="paragraph-box">
+                        <div class="content-section-header">
+                            <h1>About BEATBOX-ML</h1>
+                        </div>
+                        <div class="paragraph-container">
+                            <p class="paragraph-content">BEATBOX-ML solutions provide accessible tools for music production and
+                                composition, breaking barriers to help people enter the music industry regardless of
+                                background. We are redefining how music can be learnt, so that every individual can express
+                                themself through music. Schools and institutions will be able to integrate our technology
+                                into their teaching materials, inspiring the next generation of musicians, producers, and
+                                content creators, introducing real creative education into the curriculum.</p>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------- Mailing List ------------------------------------------------------->
+                    <div class="mailing-signup-box">
+                        <div class="mailing-signup-container">
+                            <div class="content-section-header">
+                                <h1>
+                                    <i class="bx bxs-envelope"></i>
+                                    Join our newsletter!
+                                </h1>
+                            </div>
+                            <form class="mailing-form-container" id="mailing-form">
+                                <div class="mailing-form-header">
+                                    <h2>
+                                        Subscribe to receive the latest news and exclusive offers for our products!
+                                    </h2>
+                                    <div class="newsletter-input-box-container">
+                                        <div class="newsletter-input-box">
+                                            <div class="error-text newsletter-email">1</div>
+                                            <input type="text" class="newsletter-input-field" id="newsletterEmailAddress"
+                                                placeholder="Enter your email address">
+                                        </div>
+                                        <div class="newsletter-input-box">
+                                            <div class="error-text newsletter-repeat">2</div>
+                                            <input type="text" class="newsletter-input-field" id="newsletterRepeatEmail"
+                                                placeholder="Repeat your email address">
+                                        </div>
+                                        <div class="newsletter-input-box">
+                                            <input type="submit" class="subscribe" id="newsletter-subscribe"
+                                                value="Subscribe">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------------- Contact Us --------------------------------------------------------->
+                    <div class="paragraph-box">
+                        <div class="content-section-header">
+                            <h1>Want to know more?</h1>
+                        </div>
+                        <div class="paragraph-container">
+                            <p class="paragraph-content">
+                                If you want to learn more about us, there is more on our About Us page!<br>
+                                If you would like to ask us about something, below is our contact form. We will get back to you ASAP!
+                            </p>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------- Contact Form ------------------------------------------------------->
+                    <div class="contactform-box" id="contactform-box">
+                        <form class="contactform-container" id="contactform">
+                            <div class="top">
+                                <header>Contact Form</header>
+                            </div>
+                            <div class="two-col-forms">
+                                <div class="error-text-firstname">* Required</div>
+                                <div class="error-text-lastname">* Required</div>
+                            </div>
+                            <div class="two-col-forms">
+                                <div class="input-box">
+                                    <input type="text" class="input-field" placeholder="First Name" id="First Name" maxlength="40">
+                                    <i class="bx bx-user"></i>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" class="input-field" placeholder="Surname" id="Last Name" maxlength="40">
+                                    <i class="bx bx-user"></i>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <div class="error-text email">* Required</div>
+                                <input type="text" class="input-field" placeholder="Email Address" id="Email Address" maxlength="64">
+                                <i class="bx bx-envelope"></i>
+                            </div>
+                            <div class="input-box">
+                                <div class="error-text repeat-email">* Required</div>
+                                <input type="text" class="input-field" placeholder="Repeat Email Address" id="Repeat Email Address" maxlength="64">
+                                <i class="bx bx-envelope"></i>
+                            </div>
+                            <div class="input-box">
+                                <div class="error-text phone">Optional</div>
+                                <input type="text" class="input-field-optional" placeholder="(Optional) Phone Number with +Region Code"
+                                    id="Phone Number" maxlength="32">
+                                <i class="bx bx-phone"></i>
+                            </div>
+                            <div class="input-box">
+                                <div class="error-text title">* Required</div>
+                                <input type="text" class="input-field"
+                                    placeholder="Subject or Tags (example: Products, Usage, etc.)" id="Tags" maxlength="64" minlength="5">
+                                <i class="bx bx-purchase-tag-alt"></i>
+                            </div>
+                            <div class="input-box-message">
+                                <div class="error-text message-content">* Required</div>
+                                <textarea type="text" class="message-field" placeholder="Message" id="Message" maxlength="1024" minlength="10"></textarea>
+                                <i class="bx bx-message-dots"></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="submit" class="submit" id="contactform-submit" value="Submit">
+                            </div>
+                            <div class="footer-container">
+                                <div class="footer">
+                                    <label><a href="#">Terms & Conditions</a></label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+    
+            <!-- SCROLL TO TOP BUTTON -->
+            <div class="scrollToTopButton"><i class='bx bx-arrow-to-top' id="scrollToTopButton"></i></div>
+    
+    
+            <!-- THIS IS THE END OF NON-BACKGROUND DIV. DO NOT PUT ANY CONTENT AFTER THIS DIV. -->
+        </div>
+    </div>
+    
+
+
+    <!-- Sticky scrolling animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <!-- Scroll Reveal -->
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- Mail service -->
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <!-- Alert messages -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/index.js"></script>
+    <script type="module" src="./js/modules/contactform.js"></script>
+    <script type="module" src="./js/modules/newsletter.js"></script>
+    <script type="module" src="./js/modules/index_showcase.js"></script>
+</body>
+</html>

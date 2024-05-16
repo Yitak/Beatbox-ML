@@ -1,0 +1,29 @@
+.fixed-background {
+    background: url('../assets/graphics/Sound-Wave-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Main Content */
+.slogan-container {
+    margin-inline: 0rem;
+}
+
+
+
+.slogan {
+    color: beige;
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 100;
+    text-shadow: 0 0 1.5em rgba(47, 47, 47, 0.9);
+}
+
+
+
+
+

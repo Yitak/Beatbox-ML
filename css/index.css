@@ -1,0 +1,365 @@
+.fixed-background {
+    background: url('../assets/graphics/Sound-Wave-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* SCROLL TO TOP BUTTON */
+#scrollToTopButton {
+    display: none;
+    position: fixed;
+    opacity: 0;
+    bottom: 2em;
+    right: 2em;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.2);
+    color: beige;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.25s ease-in-out;
+}
+
+#scrollToTopButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+/* MAIN CONTENT */
+.slogan-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-inline: clamp(0.3rem, 3vw, 2rem);
+}
+
+.slogan {
+    color: beige;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 100;
+    text-shadow: 0 0 1.5em rgba(47, 47, 47, 0.9);
+}
+
+
+
+
+/* SCROLL-DOWN INSTRUCTIONS */
+#instruction-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 0vh;
+}
+
+.scrolling-container {
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    -webkit-backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.5rem);
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 3em,
+        rgba(0, 0, 0, 1) calc(100% - 3em), rgba(0, 0, 0, 0) 100%
+    );
+    display: none;
+    /* debug */
+}
+
+.instruction {
+    color: beige;
+    font-size: clamp(2rem, 4.5vw, 4.5rem);
+    font-weight: 100;
+    text-shadow: 0 0 35px rgba(255, 255, 255, 0.8);
+}
+
+.instruction i {
+    font-size: clamp(2.5rem, 7.5vw, 6.8rem);
+    animation: animateBg 5s linear infinite;
+    color: beige;
+    position: relative;
+    top: clamp(0.4rem, 1vw, 1rem);
+}
+
+
+
+
+/* ANIMATION */
+
+section {
+    position: relative;
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+#hero {
+    display: none;
+}
+
+#canvas-container {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+canvas {
+    align-self: center;
+    background: black;
+    height: 100vh;
+    width: auto;
+}
+
+
+
+
+/* SHOWCASE */
+.showcase-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.showcase-container {
+    font-size: clamp(1.2rem, 2rem - 1vw, 1.4rem);
+    width: clamp(70%, 40em - 4vw, 97%);
+    display: block;
+    justify-content: center;
+}
+
+
+.chat-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    background: rgba(80, 80, 80, 0.7);
+    padding: 2.5vh 1.5vw 4vh 1.5vw;
+    border: none;
+    border-radius: 1.8rem;
+    -webkit-backdrop-filter: blur(0.3rem);
+    backdrop-filter: blur(0.3rem);
+    overflow: hidden;
+}
+
+
+.message-container-ai {
+    margin-bottom: 1vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: inherit;
+}
+
+.message-container-user {
+    margin-bottom: 1vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column wrap-reverse;
+    font-size: inherit;
+}
+
+.chat-profile.ai {
+    margin-top: 1.5vh;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.chat-profile.user {
+    margin-top: 1.5vh;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+
+
+.chat-profile img {
+    width: 1.6em;
+    height: max-content;
+}
+
+.chat-profile h1 {
+    font-weight: 400;
+    font-size: 1.2em;
+    color: rgb(237, 255, 249);
+}
+
+.sound-message-container {
+    margin-top: 1vh;
+    margin-inline: clamp(0.6em, 2vw, 2em);
+    max-width: clamp(70%, 20em + 20vw, 85%);
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.7em;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1vh rgba(255, 239, 92, 0.35);
+    overflow-x: hidden;
+    font-size: inherit;
+}
+
+.message-header h2 {
+    color: #000;
+    font-weight: 300;
+    font-size: inherit;
+    line-height: 1.2em;
+    display: flex;
+    justify-self: flex-end;
+}
+
+.audio-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-player i {
+    font-size: 2em;
+    padding: 0.2em;
+    color: rgba(57, 57, 57, 0.7);
+}
+
+.audio-player i:hover {
+    color: rgba(128, 128, 128, 0.7);
+    cursor: pointer;
+}
+
+.audio-player i:active {
+    color: rgba(105, 105, 105, 0.7);
+}
+
+.audio-duration {
+    text-align: end;
+    color: rgb(30, 30, 30);
+    font-size: 0.6em;
+    font-weight: 300;
+    padding: 0.2em 0.1em 0.2em 0px;
+}
+
+#waveform-container {
+    width: 100vw;
+    height: 8vh;
+}
+
+.waveform-container.ai_2 {
+    animation: animateBg 2s linear infinite;
+}
+
+.waveform-container.ai_3 {
+    animation: animateBg 2s linear infinite;
+}
+
+
+
+
+/* Three Visions */
+.visions-box {
+    position: relative;
+    display: block;
+    justify-content: center;
+    margin: auto;
+    margin-top: 40vh;
+    margin-bottom: 40vh;
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+    width: clamp(80%, 40em, 97%);
+    overflow: hidden;
+}
+
+.visions-container {
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    gap: 1em;
+    overflow: hidden;
+}
+
+.vision-card {
+    background: rgba(80, 80, 80, 0.65);
+    padding: 0.5em 1em 0.5em 1em;
+    border: none;
+    border-radius: 2rem;
+    margin: 0px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: clamp(80%, 25em + 15vw, 100%);
+}
+
+.vision-card.v1 {
+    clear: both;
+    float: left;
+}
+
+.vision-card.v2 {
+    clear: both;
+    float: right;
+}
+
+.vision-card.v3 {
+    clear: both;
+    float: left;
+}
+
+.vision-card h2 {
+    color: beige;
+    font-weight: 300;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+    margin-bottom: 0.65em;
+    font-size: 1.3em;
+    overflow: hidden;
+    line-height: normal;
+}
+
+.vision-card p {
+    padding-top: 0.5em;
+    color: beige;
+    font-weight: 100;
+    text-align: justify;
+}
+
+.vision-card .overflow-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.vision-card .overflow-text p {
+    padding-top: 0.5em;
+    overflow: hidden;
+}
+
+.vision-card span {
+    float: right;
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.vision-card span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
