@@ -68,7 +68,8 @@
 
 .director-photo-container img {
     width: 4em;
-    height: max-content;
+    height: 4em;
+    /* height: max-content; */
 }
 
 .director-name {

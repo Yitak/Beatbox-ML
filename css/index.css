@@ -191,7 +191,8 @@ canvas {
 
 .chat-profile img {
     width: 1.6em;
-    height: max-content;
+    height: 1.6em;
+    /* height: max-content; */
 }
 
 .chat-profile h1 {
